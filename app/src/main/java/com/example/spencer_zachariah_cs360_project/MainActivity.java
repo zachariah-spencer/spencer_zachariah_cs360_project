@@ -1,6 +1,8 @@
 package com.example.spencer_zachariah_cs360_project;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button login = findViewById(R.id.open_login);
+        Button data = findViewById(R.id.open_data);
+        Button sms = findViewById(R.id.open_sms);
+
+        login.setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
+        data.setOnClickListener(v -> startActivity(new Intent(this, DataDisplayActivity.class)));
+        sms.setOnClickListener(v -> startActivity(new Intent(this, SmsPermissionActivity.class)));
     }
 }

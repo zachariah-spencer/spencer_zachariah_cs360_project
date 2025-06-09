@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">spencer_zachariah_cs360_project</string>
+    <string name="login_title">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="data_display_title">Data</string>
+    <string name="add_data">Add Data</string>
+    <string name="delete">Delete</string>
+    <string name="sms_permission_prompt">SMS permission is required for notifications.</string>
+    <string name="sms_permission_granted">SMS permission granted</string>
+    <string name="sms_permission_denied">SMS permission denied</string>
+    <string name="check_permission">Check Permission</string>
 </resources>
