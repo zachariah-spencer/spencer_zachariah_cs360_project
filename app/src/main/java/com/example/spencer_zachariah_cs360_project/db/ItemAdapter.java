@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.spencer_zachariah_cs360_project.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
