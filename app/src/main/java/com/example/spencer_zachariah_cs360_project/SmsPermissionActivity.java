@@ -3,6 +3,7 @@ package com.example.spencer_zachariah_cs360_project;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class SmsPermissionActivity extends AppCompatActivity {
     private void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
             statusText.setText(R.string.sms_permission_granted);
+            sendTestMessage();
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, SMS_PERMISSION_REQUEST);
         }
@@ -49,10 +51,19 @@ public class SmsPermissionActivity extends AppCompatActivity {
         if (requestCode == SMS_PERMISSION_REQUEST) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 statusText.setText(R.string.sms_permission_granted);
+                sendTestMessage();
             } else {
                 statusText.setText(R.string.sms_permission_denied);
                 Toast.makeText(this, R.string.sms_permission_denied, Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    /**
+     * Send a simple SMS to demonstrate permission usage.
+     */
+    private void sendTestMessage() {
+        SmsManager.getDefault().sendTextMessage("5554", null,
+                "SMS permission granted", null, null);
     }
 }
